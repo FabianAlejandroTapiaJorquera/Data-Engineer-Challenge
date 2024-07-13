@@ -4,8 +4,6 @@ from memory_profiler import profile
 import jsonlines
 from collections import defaultdict
 
-# variable donde almacenaremos nuestros resultados
-resultado: List[Tuple[datetime.date, str]] = []
 # diccionario para contar las publicaciones por fecha y las publicaciones por usuario por fecha
 contadorFechas = defaultdict(int)
 contadorUsuarioFecha = defaultdict(lambda: defaultdict(int))
@@ -18,6 +16,8 @@ def obtenerUsuario(fecha):
 
 # @profile
 def q1_memory(file_path: str) -> List[Tuple[datetime.date, str]]:
+    # variable donde almacenaremos nuestros resultados
+    resultado: List[Tuple[datetime.date, str]] = []
     # procesamiento de cada elemento dentro del archivo json
     with jsonlines.open(file_path) as twitter:
         for publicacion in twitter:
