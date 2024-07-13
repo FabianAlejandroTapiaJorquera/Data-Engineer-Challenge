@@ -1,11 +1,13 @@
 from typing import List, Tuple
 import jsonlines
 from collections import Counter
-import re
+import regex as re
+from memory_profiler import profile
 
 # Regex para detectar menciones de usuarios
 mencionRegex = re.compile(r'@(\w+)')
 
+# @profile
 def q3_memory(file_path: str) -> List[Tuple[str, int]]:
     # contador para las menciones de usuarios
     contadorMenciones = Counter()
