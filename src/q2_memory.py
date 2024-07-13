@@ -32,7 +32,7 @@ def q2_memory(file_path: str) -> List[Tuple[str, int]]:
     with jsonlines.open(file_path) as twitter:
         # recorrimos cada publicación dentro del archivo
         for publicacion in twitter:
-            # publicaciones se encuentran en content
+            # publicaciones se encuentran en 'content'
             contenido = publicacion['content']
             if contenido:
                 # filtramos los emojis de la publicación con ayuda de la expresión regular
