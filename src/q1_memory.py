@@ -3,7 +3,6 @@ from datetime import datetime
 from memory_profiler import profile
 import jsonlines
 from collections import defaultdict
-from typing import List, Tuple
 
 # variable donde almacenaremos nuestros resultados
 resultado: List[Tuple[datetime.date, str]] = []
