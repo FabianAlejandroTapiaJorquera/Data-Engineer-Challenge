@@ -1,3 +1,4 @@
 memory-profiler==0.61.0
 jsonlines==4.0.0 
 regex==2024.5.15
+pandas==2.2.2 

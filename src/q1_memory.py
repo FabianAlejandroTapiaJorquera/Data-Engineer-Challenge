@@ -29,6 +29,7 @@ def q1_memory(file_path: str) -> List[Tuple[datetime.date, str]]:
             # condicionales
             # contadores de cuantas veces se repite cada elemento
             if fecha:
+                fecha = datetime.strptime(fecha, '%Y-%m-%dT%H:%M:%S%z').date()
                 contadorFechas[fecha] += 1
                 if usuario:
                     contadorUsuarioFecha[fecha][usuario] += 1
@@ -37,5 +38,5 @@ def q1_memory(file_path: str) -> List[Tuple[datetime.date, str]]:
     # almacenamiento de los resultados
     for fecha, count in top10Fechas:
         usuarioTop = obtenerUsuario(fecha) 
-        resultado.append((fecha, usuarioTop))
+        resultado.append((fecha, str(usuarioTop)))
     return resultado
